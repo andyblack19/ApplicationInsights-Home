@@ -69,7 +69,7 @@ All SDKs would support File logging to provide a basic and consistent supportabi
     - Default: no max size? **TODO: Needs a decision**
 
 ##### File Name
-`ApplicationInsightsLog_{DateTime.UtcNow.ToInvariantString("yyyyMMdd_HHmmss")}_{process.ProcessName}_{process.Id}.txt`
+`ApplicationInsightsLog_{DateTime.UtcNow.ToInvariantString("yyyyMMdd_HHmmss")}_{process.ProcessName}_{process.Id}.log`
 
 This format is proposed because multiple SDKs may read the system's environment variable. This format will help users identify the program or process writing to this file.
 
