@@ -1,9 +1,9 @@
-# Self-Diagnostics Proposal
+# Application Insights SDK Self-Diagnostics
 
 ## Introduction
 We want to improve supportability across Application Insights SDKs by introducing a unified configuration.
 
-This proposal is to introduce a means to enable temporary logging in production environments.
+This proposal is to introduce a means to enable temporary logging in production environments. Temporary logging instructions would supercede any logging configuration in the SDK, to enable DevOps to take control.
 
 Permanent changes to logging would belong in the SDK's configuration (config file or code-based initialization), but may use this same schema.
 
@@ -43,11 +43,13 @@ Each product is free to define unique ways to set a configuration (aka "control 
 - The full length will not exceed XXX characters. **TODO: Needs a decision**
 
 ### Schema
+
+
 - `Destination`
     - Values: **File**, **ETW**, **Console**, **None**
-    - The destination will define where logs are sent. The value will define the sub keywords.
+    - Specifying a destination will "turn-on" temporary logging. This can override anything in the SDK's normal configuration. The destination will define where logs are sent and the value will define the sub keywords.
 
-To disable logging
+To revert to the SDK's previously configured logging:
 - Destination will be set to None.
 - The Environment Variable would be set to string.Empty.
 - The Environment Variable would be deleted.
