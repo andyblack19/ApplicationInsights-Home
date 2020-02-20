@@ -38,7 +38,7 @@ Each product is free to define unique ways to set a configuration (aka "control 
 - Reserved characters
     - `=` equal sign
     - `;` semi colon
-- The configuration string will be case insensative. 
+- The configuration string will be case insensitive. 
 - Keys will not be order dependent and are expected to appear only once.
 - The full length will not exceed XXX characters. **TODO: Needs a decision**
 
@@ -93,6 +93,7 @@ This format is proposed because multiple SDKs may read the system's environment 
 **TO BE DEFINED**
 
 The DotNet SDKs have ETW logging always on. Any changes to this would be a breaking change.
+Java is specifically interested in supporting ETW.
 
 #### "Destination=Console" schema
 
